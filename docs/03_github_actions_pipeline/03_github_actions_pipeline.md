@@ -1,26 +1,26 @@
 ---
-title: 'Exercise 02: Implement Infrastructure with Copilot'
+title: 'Exercise 03: Build and Deploy a GitHub Actions CI/CD Pipeline'
 layout: default
 nav_order: 2
 has_children: true
 ---
 
-# Exercise 02: Implement Infrastructure with Copilot
+# Exercise 03: Build and Deploy a GitHub Actions CI/CD Pipeline
 
 ## Scenario
 
 This training will have you implement a customer proof of concept using DevOps and AI-driven development practices. The customer in this scenario is Zava, a retail chain that specializes in "do-it-yourself" solutions for home improvement projects. Zava has a simple storefront prototype and would like to establish best practices for DevOps setup and AI-assisted development and delivery. In this lab, you will configure GitHub Enterprise with security best practices, set up Visual Studio Code, GitHub Copilot, and Azure MCP Server to streamline DevOps planning and delivery, and extend the solution using Azure AI Foundry to generate and enhance application code.
 
-In this exercise, you will use GitHub Copilot to create an infrastructure GitHub issue and from Visual Studio Code you will use tell GitHub Copilot to generate the infrastructure Bicep scripts from the issue. This will also leverage Azure MCP Server for best practices. You will then deploy the infrastructure by running the script.
+In this exercise, you will use create a GitHub Actions CI/CD pipeline (workflow) to build and containerize the Zava application and then deploy it to your Azure infrastructure previously created in Exercise 2. 
 
 ## Objectives
 
 After you complete this exercise, you will:
- 
-* Create a GitHub issue using Chat for Copilot
-* Generate Bicep scripts from a GitHub issue using GitHub Copilot and Azure MCP Server
-* Learn techniques for improving scripts iteratively with Copilot prompts
-* Execute the Bicep scripts to create the infrastructure
+
+* Create a GitHub Actions CI/CD pipeline (workflow)
+* Test the workflow as part of the Pull Request process
+* Monitor and review the results of the workflow
+* Troubleshoot issues with the workflow
 
 ## Duration
 
