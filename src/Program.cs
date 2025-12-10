@@ -18,6 +18,7 @@ builder.Services.AddSession(options =>
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<ProductService>();
 builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<IFoundryService, FoundryService>();
 
 var app = builder.Build();
 
