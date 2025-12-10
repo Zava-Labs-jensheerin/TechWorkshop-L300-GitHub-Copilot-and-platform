@@ -141,6 +141,9 @@ coverage-html/
 # Generated files
 appsettings.*.json
 
+# Bicep compiled ARM templates
+infra/**/*.json
+
 # Misc
 Thumbs.db
 desktop.ini
@@ -148,3 +151,4 @@ desktop.ini
 # Keep track of local configs that may be useful to commit by exception
 !/.gitattributes
 !/.gitignore
+.azure
