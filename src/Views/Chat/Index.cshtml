@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Chat";
+}
+<h2>Chat with Phi4</h2>
+<div>
+    <textarea id="conversation" rows="10" style="width:100%;" readonly></textarea>
+</div>
+<div style="margin-top:10px;">
+    <input type="text" id="prompt" style="width:80%;" placeholder="Type your message..." />
+    <button id="sendBtn">Send</button>
+</div>
+<script>
+    const conversation = document.getElementById('conversation');
+    const promptInput = document.getElementById('prompt');
+    const sendBtn = document.getElementById('sendBtn');
+
+    sendBtn.onclick = async function() {
+        const prompt = promptInput.value.trim();
+        if (!prompt) return;
+        sendBtn.disabled = true;
+        const response = await fetch('/Chat/Send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'prompt=' + encodeURIComponent(prompt)
+        });
+        const data = await response.json();
+        conversation.value += '\nUser: ' + prompt + '\nPhi4: ' + data.result + '\n';
+        promptInput.value = '';
+        sendBtn.disabled = false;
+    };
+</script>

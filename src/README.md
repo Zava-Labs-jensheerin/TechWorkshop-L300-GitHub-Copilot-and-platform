@@ -116,3 +116,35 @@ The application includes structured logging for:
 - Checkout process
 
 Logs are written to console during development.
+
+## Chat Feature (Phi4 Foundry)
+
+This app includes a simple chat page at `/Chat` that sends user prompts to the Microsoft Foundry Phi4 endpoint and displays responses.
+
+### Configuration
+
+Add the following to your `appsettings.json` or use environment variables:
+
+```
+"Foundry": {
+  "Endpoint": "https://<your-foundry-endpoint>/v1/chat/completions",
+  "ApiKey": "<your-api-key>"
+}
+```
+
+**Do not commit your API key to source control.**
+
+- For production, use Azure Key Vault or environment variables to provide secrets.
+- The API key is read from configuration and injected via DI.
+
+### How it works
+- Visit `/Chat` in the browser
+- Type a prompt and click Send
+- The response from the Phi4 model is appended to the conversation area
+
+### Required Services
+- `IFoundryService` and `FoundryService` handle API calls
+- Registered in DI in `Program.cs`
+
+### Smoke Test
+- Visit `/Chat`, send a prompt, and verify model response appears
