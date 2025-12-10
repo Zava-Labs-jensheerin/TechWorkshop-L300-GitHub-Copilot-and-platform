@@ -141,6 +141,9 @@ coverage-html/
 # Generated files
 appsettings.*.json
 
+# Bicep compiled ARM templates
+infra/**/*.json
+
 # Misc
 Thumbs.db
 desktop.ini
